@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const dotenv = require('dotenv');
-dotenv.config();
+require('dotenv').config();
 
 const jsonServer = require('json-server');
 const path = require('path');

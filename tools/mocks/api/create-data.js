@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const dotenv = require('dotenv');
-dotenv.config();
+require('dotenv').config();
 
 const port = process.env.API_PORT || 4000;
 const apiUrl = `http://localhost:${port}/api`;
