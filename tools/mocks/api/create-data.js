@@ -281,7 +281,7 @@ const relationDb = relations.reduce((acc, current) => {
 }, xdb);
 
 const dir = path.join(__dirname, 'data');
-if (!fs.existsSync(dir)){
+if (!fs.existsSync(dir)) {
   fs.mkdirSync(dir, { recursive: true });
 }
 
