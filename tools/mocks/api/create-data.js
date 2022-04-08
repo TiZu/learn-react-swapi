@@ -280,6 +280,11 @@ const relationDb = relations.reduce((acc, current) => {
   return acc;
 }, xdb);
 
+const dir = path.join(__dirname, 'data');
+if (!fs.existsSync(dir)){
+  fs.mkdirSync(dir, { recursive: true });
+}
+
 const dataPath = path.join(__dirname, 'data', 'db.json');
 fs.writeFile(dataPath, JSON.stringify(relationDb), () => {
   console.log('MockApi: Data created successfully!');
