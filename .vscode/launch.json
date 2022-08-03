@@ -1,17 +1,28 @@
 {
+  "version": "0.2.0",
   "configurations": [
     {
-      "type": "pwa-chrome",
-      "name": "Debug /w Chrome",
+      "name": "Debug Frontend",
+      "type": "node-terminal",
       "request": "launch",
-      "url": "http://localhost:3000"
-    },
-    {
-      "type": "pwa-chrome",
-      "name": "Run & Debug /w Chrome",
-      "request": "launch",
-      "url": "http://localhost:3000",
-      "preLaunchTask": "npm: start"
+      "command": "yarn start",
+      "env": {
+        "BROWSER": "none",
+        "PORT": "3000"
+      },
+      "serverReadyAction": {
+        "action": "debugWithChrome",
+        "pattern": "Compiled",
+        "uriFormat": "http://localhost:3000",
+        "webRoot": "${workspaceFolder}"
+      },
+      "preLaunchTask": "yarn:install",
+      "presentation": {
+        "hidden": false,
+        "group": "debug",
+        "order": 30
+      }
     }
-  ]
+  ],
+  "compounds": []
 }
